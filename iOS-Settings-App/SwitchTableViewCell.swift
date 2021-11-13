@@ -1,6 +1,6 @@
 //
 //  SettingTableViewCell.swift
-//  SettingsApp2
+//  iOS-Settings-App
 //
 
 import UIKit
@@ -11,14 +11,14 @@ class SwitchTableViewCell: UITableViewCell {
     private let iconContainer: UIView = {
         let view = UIView()
         view.clipsToBounds = true
-        view.layer.cornerRadius = 8
+        view.layer.cornerRadius = Metrics.cornerRadius
         view.layer.masksToBounds = true
         return view
     }()
     
     private let label: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 1
+        label.numberOfLines = Metrics.numberOfLines
         return label
     }()
     
@@ -52,23 +52,23 @@ class SwitchTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let size: CGFloat = contentView.frame.size.height - 12
-        iconContainer.frame = CGRect(x: 15, y: 6, width: size, height: size)
+        let size: CGFloat = contentView.frame.size.height - Metrics.sizePadding
+        iconContainer.frame = CGRect(x: Metrics.iconContainerX, y: Metrics.iconContainerY, width: size, height: size)
         
         let imageSize: CGFloat = size/1.5
         iconImageView.frame = CGRect(x: (size - imageSize)/2, y: (size - imageSize)/2, width: imageSize, height: imageSize)
         
         _switch.sizeToFit()
         _switch.frame = CGRect(
-            x: contentView.frame.size.width - _switch.frame.size.width - 20,
+            x: contentView.frame.size.width - _switch.frame.size.width - Metrics.switchXMargin,
             y: (contentView.frame.size.height - _switch.frame.size.height)/2,
             width: _switch.frame.size.width,
             height: _switch.frame.size.height)
         
         label.frame = CGRect(
-            x: 25 + iconContainer.frame.size.width,
-            y: 0,
-            width: contentView.frame.size.width - 20 - iconContainer.frame.size.width,
+            x: Metrics.labelXMargin + iconContainer.frame.size.width,
+            y: Metrics.yZero,
+            width: contentView.frame.size.width - Metrics.labelWidthMargin - iconContainer.frame.size.width,
             height: contentView.frame.size.height)
     }
     
