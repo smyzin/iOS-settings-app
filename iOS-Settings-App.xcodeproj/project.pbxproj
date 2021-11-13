@@ -12,18 +12,20 @@
 		8528306227130F7F0009E4E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528306127130F7F0009E4E1 /* ViewController.swift */; };
 		8528306527130F7F0009E4E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8528306327130F7F0009E4E1 /* Main.storyboard */; };
 		8528306A27130F830009E4E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8528306827130F830009E4E1 /* LaunchScreen.storyboard */; };
+		8532D98127401B3000819ECD /* BadgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8532D98027401B3000819ECD /* BadgeTableViewCell.swift */; };
 		857C5F882725802900AABF2B /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C5F872725802900AABF2B /* SettingTableViewCell.swift */; };
 		857C5F8A2725950C00AABF2B /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C5F892725950C00AABF2B /* SwitchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8528305A27130F7F0009E4E1 /* SettingsApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SettingsApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8528305A27130F7F0009E4E1 /* iOS-Settings-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Settings-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8528305D27130F7F0009E4E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8528305F27130F7F0009E4E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8528306127130F7F0009E4E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8528306427130F7F0009E4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8528306927130F830009E4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8528306B27130F830009E4E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8532D98027401B3000819ECD /* BadgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTableViewCell.swift; sourceTree = "<group>"; };
 		857C5F872725802900AABF2B /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		857C5F892725950C00AABF2B /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -42,7 +44,7 @@
 		8528305127130F7F0009E4E1 = {
 			isa = PBXGroup;
 			children = (
-				8528305C27130F7F0009E4E1 /* SettingsApp2 */,
+				8528305C27130F7F0009E4E1 /* iOS-Settings-App */,
 				8528305B27130F7F0009E4E1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,12 +52,12 @@
 		8528305B27130F7F0009E4E1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8528305A27130F7F0009E4E1 /* SettingsApp2.app */,
+				8528305A27130F7F0009E4E1 /* iOS-Settings-App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8528305C27130F7F0009E4E1 /* SettingsApp2 */ = {
+		8528305C27130F7F0009E4E1 /* iOS-Settings-App */ = {
 			isa = PBXGroup;
 			children = (
 				8528305D27130F7F0009E4E1 /* AppDelegate.swift */,
@@ -66,16 +68,17 @@
 				8528306B27130F830009E4E1 /* Info.plist */,
 				857C5F872725802900AABF2B /* SettingTableViewCell.swift */,
 				857C5F892725950C00AABF2B /* SwitchTableViewCell.swift */,
+				8532D98027401B3000819ECD /* BadgeTableViewCell.swift */,
 			);
-			path = SettingsApp2;
+			path = "iOS-Settings-App";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8528305927130F7F0009E4E1 /* SettingsApp2 */ = {
+		8528305927130F7F0009E4E1 /* iOS-Settings-App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8528306E27130F830009E4E1 /* Build configuration list for PBXNativeTarget "SettingsApp2" */;
+			buildConfigurationList = 8528306E27130F830009E4E1 /* Build configuration list for PBXNativeTarget "iOS-Settings-App" */;
 			buildPhases = (
 				8528305627130F7F0009E4E1 /* Sources */,
 				8528305727130F7F0009E4E1 /* Frameworks */,
@@ -85,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = SettingsApp2;
+			name = "iOS-Settings-App";
 			productName = SettingsApp2;
-			productReference = 8528305A27130F7F0009E4E1 /* SettingsApp2.app */;
+			productReference = 8528305A27130F7F0009E4E1 /* iOS-Settings-App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -104,7 +107,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8528305527130F7F0009E4E1 /* Build configuration list for PBXProject "SettingsApp2" */;
+			buildConfigurationList = 8528305527130F7F0009E4E1 /* Build configuration list for PBXProject "iOS-Settings-App" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -117,7 +120,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8528305927130F7F0009E4E1 /* SettingsApp2 */,
+				8528305927130F7F0009E4E1 /* iOS-Settings-App */,
 			);
 		};
 /* End PBXProject section */
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8528306227130F7F0009E4E1 /* ViewController.swift in Sources */,
+				8532D98127401B3000819ECD /* BadgeTableViewCell.swift in Sources */,
 				8528305E27130F7F0009E4E1 /* AppDelegate.swift in Sources */,
 				857C5F8A2725950C00AABF2B /* SwitchTableViewCell.swift in Sources */,
 				857C5F882725802900AABF2B /* SettingTableViewCell.swift in Sources */,
@@ -290,12 +294,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SettingsApp2/Info.plist;
+				INFOPLIST_FILE = "iOS-Settings-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.my.SettingsApp2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.my.iOS-settings-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,12 +311,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SettingsApp2/Info.plist;
+				INFOPLIST_FILE = "iOS-Settings-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.my.SettingsApp2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.my.iOS-settings-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -322,7 +326,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8528305527130F7F0009E4E1 /* Build configuration list for PBXProject "SettingsApp2" */ = {
+		8528305527130F7F0009E4E1 /* Build configuration list for PBXProject "iOS-Settings-App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8528306C27130F830009E4E1 /* Debug */,
@@ -331,7 +335,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8528306E27130F830009E4E1 /* Build configuration list for PBXNativeTarget "SettingsApp2" */ = {
+		8528306E27130F830009E4E1 /* Build configuration list for PBXNativeTarget "iOS-Settings-App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8528306F27130F830009E4E1 /* Debug */,

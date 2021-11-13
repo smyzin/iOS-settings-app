@@ -8,6 +8,31 @@ import UIKit
 enum SettingsOptionType {
     case staticCell(model: SettingsOption)
     case switchCell(model: SettingsSwitchOption)
+    case badgeCell(model: SettingsBadgeOption)
+}
+
+enum Metrics {
+    // Common
+    static let numberOfLines = 1
+    static let cornerRadius: CGFloat = 10
+    static let yZero: CGFloat = 0
+    static let sizePadding: CGFloat = 12
+    // Icon Container
+    static let iconContainerX: CGFloat = 15
+    static let iconContainerY: CGFloat = 6
+    // Label
+    static let labelXMargin: CGFloat = 25
+    static let labelWidthMargin: CGFloat = 20
+    // Sub Label
+    static let subLabelXMargin: CGFloat = 30
+    static let subLabelWidth: CGFloat = 80
+    // Switch
+    static let switchXMargin: CGFloat = 20
+    // Badge
+    static let badgeWidth: CGFloat = 20
+    static let badgeHeight: CGFloat = 20
+    static let badgeXMargin: CGFloat = 25
+    static let badgeYMargin: CGFloat = 32
 }
 
 struct Section {
@@ -19,7 +44,6 @@ struct SettingsOption {
     let icon: UIImage?
     let iconBackgroundColor: UIColor
     let subText: String?
-    
     let handler: (() -> Void)
 }
 
@@ -28,7 +52,14 @@ struct SettingsSwitchOption {
     let icon: UIImage?
     let iconBackgroundColor: UIColor
     var isOn: Bool
-    
+    let handler: (() -> Void)
+}
+
+struct SettingsBadgeOption {
+    let title: String
+    let icon: UIImage?
+    let iconBackgroundColor: UIColor
+    var count: String
     let handler: (() -> Void)
 }
 
@@ -40,6 +71,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                        forCellReuseIdentifier: SettingTableViewCell.identifier)
         table.register(SwitchTableViewCell.self,
                        forCellReuseIdentifier: SwitchTableViewCell.identifier)
+        table.register(BadgeTableViewCell.self,
+                       forCellReuseIdentifier: BadgeTableViewCell.identifier)
         return table
     }()
     
@@ -73,7 +106,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         ]))
         
         models.append(Section(options: [
-            .staticCell(model: SettingsOption(title: "General", icon: UIImage(systemName: "gear"), iconBackgroundColor: .systemGray, subText: "") { print("Tapped General cell") }),
+            .badgeCell(model: SettingsBadgeOption(title: "General", icon: UIImage(systemName: "gear"), iconBackgroundColor: .systemGray, count: "2") { print("Tapped General cell") }),
             .staticCell(model: SettingsOption(title: "Control Center", icon: UIImage(systemName: "switch.2"), iconBackgroundColor: .systemGray, subText: "") { print("Tapped Control Center cell") }),
             .staticCell(model: SettingsOption(title: "Display & Brightness", icon: UIImage(systemName: "textformat.size"), iconBackgroundColor: .systemBlue, subText: "") { print("Tapped Display & Brightness cell") }),
             .staticCell(model: SettingsOption(title: "Home Screen", icon: UIImage(systemName: "apps.ipad.landscape"), iconBackgroundColor: .systemIndigo, subText: "") { print("Tapped Home Screen cell") }),
@@ -113,6 +146,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             cell.configure(with: model)
             return cell
+        case .badgeCell(let model):
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: BadgeTableViewCell.identifier,
+                for: indexPath
+            ) as? BadgeTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.configure(with: model)
+            return cell
         }
     }
     
@@ -123,6 +165,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         case .staticCell(let model):
             model.handler()
         case .switchCell(let model):
+            model.handler()
+        case .badgeCell(let model):
             model.handler()
         }
     }
