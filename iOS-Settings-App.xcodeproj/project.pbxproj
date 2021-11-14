@@ -9,25 +9,27 @@
 /* Begin PBXBuildFile section */
 		8528305E27130F7F0009E4E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528305D27130F7F0009E4E1 /* AppDelegate.swift */; };
 		8528306027130F7F0009E4E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528305F27130F7F0009E4E1 /* SceneDelegate.swift */; };
-		8528306227130F7F0009E4E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528306127130F7F0009E4E1 /* ViewController.swift */; };
+		8528306227130F7F0009E4E1 /* iOSSettingsAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528306127130F7F0009E4E1 /* iOSSettingsAppController.swift */; };
 		8528306527130F7F0009E4E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8528306327130F7F0009E4E1 /* Main.storyboard */; };
 		8528306A27130F830009E4E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8528306827130F830009E4E1 /* LaunchScreen.storyboard */; };
-		8532D98127401B3000819ECD /* BadgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8532D98027401B3000819ECD /* BadgeTableViewCell.swift */; };
-		857C5F882725802900AABF2B /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C5F872725802900AABF2B /* SettingTableViewCell.swift */; };
-		857C5F8A2725950C00AABF2B /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C5F892725950C00AABF2B /* SwitchTableViewCell.swift */; };
+		8532D98127401B3000819ECD /* BadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8532D98027401B3000819ECD /* BadgeCell.swift */; };
+		8532D98A274187B000819ECD /* iOSSettingsAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8532D989274187B000819ECD /* iOSSettingsAppModel.swift */; };
+		857C5F882725802900AABF2B /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C5F872725802900AABF2B /* TableCell.swift */; };
+		857C5F8A2725950C00AABF2B /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C5F892725950C00AABF2B /* SwitchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8528305A27130F7F0009E4E1 /* iOS-Settings-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Settings-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8528305D27130F7F0009E4E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8528305F27130F7F0009E4E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8528306127130F7F0009E4E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8528306127130F7F0009E4E1 /* iOSSettingsAppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSettingsAppController.swift; sourceTree = "<group>"; };
 		8528306427130F7F0009E4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8528306927130F830009E4E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8528306B27130F830009E4E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8532D98027401B3000819ECD /* BadgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTableViewCell.swift; sourceTree = "<group>"; };
-		857C5F872725802900AABF2B /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
-		857C5F892725950C00AABF2B /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		8532D98027401B3000819ECD /* BadgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCell.swift; sourceTree = "<group>"; };
+		8532D989274187B000819ECD /* iOSSettingsAppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSettingsAppModel.swift; sourceTree = "<group>"; };
+		857C5F872725802900AABF2B /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		857C5F892725950C00AABF2B /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +62,74 @@
 		8528305C27130F7F0009E4E1 /* iOS-Settings-App */ = {
 			isa = PBXGroup;
 			children = (
-				8528305D27130F7F0009E4E1 /* AppDelegate.swift */,
-				8528305F27130F7F0009E4E1 /* SceneDelegate.swift */,
-				8528306127130F7F0009E4E1 /* ViewController.swift */,
+				8532D98327414E5F00819ECD /* Sources */,
+				8532D98227414E4700819ECD /* Resources */,
+			);
+			path = "iOS-Settings-App";
+			sourceTree = "<group>";
+		};
+		8532D98227414E4700819ECD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				8528306327130F7F0009E4E1 /* Main.storyboard */,
 				8528306827130F830009E4E1 /* LaunchScreen.storyboard */,
 				8528306B27130F830009E4E1 /* Info.plist */,
-				857C5F872725802900AABF2B /* SettingTableViewCell.swift */,
-				857C5F892725950C00AABF2B /* SwitchTableViewCell.swift */,
-				8532D98027401B3000819ECD /* BadgeTableViewCell.swift */,
 			);
-			path = "iOS-Settings-App";
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8532D98327414E5F00819ECD /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8532D98527414EA400819ECD /* Scenes */,
+				8532D98427414E9800819ECD /* App */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		8532D98427414E9800819ECD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8528305D27130F7F0009E4E1 /* AppDelegate.swift */,
+				8528305F27130F7F0009E4E1 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8532D98527414EA400819ECD /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8532D9882741874C00819ECD /* Model */,
+				8532D9872741874500819ECD /* View */,
+				8532D9862741873E00819ECD /* Controller */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		8532D9862741873E00819ECD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8528306127130F7F0009E4E1 /* iOSSettingsAppController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8532D9872741874500819ECD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				857C5F872725802900AABF2B /* TableCell.swift */,
+				857C5F892725950C00AABF2B /* SwitchCell.swift */,
+				8532D98027401B3000819ECD /* BadgeCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8532D9882741874C00819ECD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8532D989274187B000819ECD /* iOSSettingsAppModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,11 +201,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8528306227130F7F0009E4E1 /* ViewController.swift in Sources */,
-				8532D98127401B3000819ECD /* BadgeTableViewCell.swift in Sources */,
+				8532D98A274187B000819ECD /* iOSSettingsAppModel.swift in Sources */,
+				8528306227130F7F0009E4E1 /* iOSSettingsAppController.swift in Sources */,
+				8532D98127401B3000819ECD /* BadgeCell.swift in Sources */,
 				8528305E27130F7F0009E4E1 /* AppDelegate.swift in Sources */,
-				857C5F8A2725950C00AABF2B /* SwitchTableViewCell.swift in Sources */,
-				857C5F882725802900AABF2B /* SettingTableViewCell.swift in Sources */,
+				857C5F8A2725950C00AABF2B /* SwitchCell.swift in Sources */,
+				857C5F882725802900AABF2B /* TableCell.swift in Sources */,
 				8528306027130F7F0009E4E1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,6 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "iOS-Settings-App/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -279,6 +340,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "iOS-Settings-App/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -294,7 +356,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "iOS-Settings-App/Info.plist";
+				INFOPLIST_FILE = "iOS-Settings-App/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,7 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "iOS-Settings-App/Info.plist";
+				INFOPLIST_FILE = "iOS-Settings-App/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

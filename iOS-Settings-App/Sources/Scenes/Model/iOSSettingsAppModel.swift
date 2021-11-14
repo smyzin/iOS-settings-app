@@ -1,6 +1,8 @@
 //
-//  ViewController.swift
-//  SettingsApp2
+//  iOSSettingsAppView.swift
+//  iOS-Settings-App
+//
+//  Created by Sergey Myzin on 14.11.2021.
 //
 
 import UIKit
@@ -63,31 +65,8 @@ struct SettingsBadgeOption {
     let handler: (() -> Void)
 }
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    private let tableView: UITableView = {
-        let table = UITableView(frame: .zero, style: .grouped)
-        table.register(SettingTableViewCell.self,
-                       forCellReuseIdentifier: SettingTableViewCell.identifier)
-        table.register(SwitchTableViewCell.self,
-                       forCellReuseIdentifier: SwitchTableViewCell.identifier)
-        table.register(BadgeTableViewCell.self,
-                       forCellReuseIdentifier: BadgeTableViewCell.identifier)
-        return table
-    }()
-    
-    var models = [Section]()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configure()
-        title = "Settings"
-        view.addSubview(tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.frame = view.bounds
-    }
-    
+extension iOSSettingsAppController {
+    // MARK: - Init model (Controller)
     func configure() {
         models.append(Section(options: [
             .switchCell(model: SettingsSwitchOption(title: "Airplane Mode", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .systemOrange, isOn: true ) { print("Tapped Airplane mode cell") }),
@@ -115,61 +94,4 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             .staticCell(model: SettingsOption(title: "Siri & Search", icon: UIImage(contentsOfFile: "Users/sergei/Downloads/siri.png"), iconBackgroundColor: .clear, subText: "") { print("Tapped Siri & Search cell") }),
         ]))
     }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return models.count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return models[section].options.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = models[indexPath.section].options[indexPath.row]
-        
-        switch model.self {
-        case .staticCell(let model):
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: SettingTableViewCell.identifier,
-                for: indexPath
-            ) as? SettingTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.configure(with: model)
-            return cell
-        case .switchCell(let model):
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: SwitchTableViewCell.identifier,
-                for: indexPath
-            ) as? SwitchTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.configure(with: model)
-            return cell
-        case .badgeCell(let model):
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: BadgeTableViewCell.identifier,
-                for: indexPath
-            ) as? BadgeTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.configure(with: model)
-            return cell
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let type = models[indexPath.section].options[indexPath.row]
-        switch type.self {
-        case .staticCell(let model):
-            model.handler()
-        case .switchCell(let model):
-            model.handler()
-        case .badgeCell(let model):
-            model.handler()
-        }
-    }
-
 }
-
