@@ -1,5 +1,5 @@
 //
-//  BadgeTableViewCell.swift
+//  BadgeCell.swift
 //  iOS-Settings-App
 //
 //  Created by Sergey Myzin on 13.11.2021.
@@ -7,8 +7,9 @@
 
 import UIKit
 
-class BadgeTableViewCell: UITableViewCell {
-    static let identifier = "BadgeTableViewCell"
+class BadgeCell: UITableViewCell {
+    // MARK: - ID
+    static let identifier = "BadgeCell"
     
     // MARK: - Variables
     private let iconContainer: UIView = {
@@ -43,22 +44,39 @@ class BadgeTableViewCell: UITableViewCell {
     // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(label)
-        contentView.addSubview(badge)
-        contentView.addSubview(iconContainer)
-        iconContainer.addSubview(iconImageView)
-        
-        contentView.clipsToBounds = true
-        accessoryType = .disclosureIndicator
+        setupHierarchy()
     }
     
     required init?(coder: NSCoder) {
         fatalError()
     }
     
-    // MARK: - Setup layout
     override func layoutSubviews() {
         super.layoutSubviews()
+        setupLayouts()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        iconImageView.image = nil
+        label.text = nil
+        badge.text = nil
+        iconContainer.backgroundColor = nil
+    }
+    
+    // MARK: - Setup Hierarchy (Badge)
+    func setupHierarchy() {
+        contentView.clipsToBounds = true
+        accessoryType = .disclosureIndicator
+        
+        contentView.addSubview(label)
+        contentView.addSubview(badge)
+        contentView.addSubview(iconContainer)
+        iconContainer.addSubview(iconImageView)
+    }
+    
+    // MARK: - Setup Layouts (Badge)
+    func setupLayouts() {
         let size: CGFloat = contentView.frame.size.height - Metrics.sizePadding
         iconContainer.frame = CGRect(x: Metrics.iconContainerX, y: Metrics.iconContainerY, width: size, height: size)
         
@@ -85,14 +103,7 @@ class BadgeTableViewCell: UITableViewCell {
         )
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        iconImageView.image = nil
-        label.text = nil
-        badge.text = nil
-        iconContainer.backgroundColor = nil
-    }
-    
+    // MARK: - Configure
     public func configure(with model: SettingsBadgeOption) {
         label.text = model.title
         badge.text = model.count

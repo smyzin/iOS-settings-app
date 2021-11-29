@@ -1,13 +1,15 @@
 //
-//  SettingTableViewCell.swift
+//  SwitchCell.swift
 //  iOS-Settings-App
 //
 
 import UIKit
 
-class SwitchTableViewCell: UITableViewCell {
-    static let identifier = "SwitchTableViewCell"
+class SwitchCell: UITableViewCell {
+    // MARK: - ID
+    static let identifier = "SwitchCell"
     
+    // MARK: - Variables
     private let iconContainer: UIView = {
         let view = UIView()
         view.clipsToBounds = true
@@ -35,15 +37,10 @@ class SwitchTableViewCell: UITableViewCell {
         return _switch
     }()
     
+    // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(label)
-        contentView.addSubview(iconContainer)
-        contentView.addSubview(_switch)
-        iconContainer.addSubview(iconImageView)
-        
-        contentView.clipsToBounds = true
-        accessoryType = .none
+        setupHierarchy()
     }
     
     required init?(coder: NSCoder) {
@@ -52,6 +49,30 @@ class SwitchTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        setupLayouts()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        iconImageView.image = nil
+        label.text = nil
+        iconContainer.backgroundColor = nil
+        _switch.isOn = false
+    }
+    
+    // MARK: - Setup Hierarchy (Switch)
+    func setupHierarchy() {
+        contentView.clipsToBounds = true
+        accessoryType = .none
+        
+        contentView.addSubview(label)
+        contentView.addSubview(iconContainer)
+        contentView.addSubview(_switch)
+        iconContainer.addSubview(iconImageView)
+    }
+    
+    // MARK: - Setup Layouts (Switch)
+    func setupLayouts() {
         let size: CGFloat = contentView.frame.size.height - Metrics.sizePadding
         iconContainer.frame = CGRect(x: Metrics.iconContainerX, y: Metrics.iconContainerY, width: size, height: size)
         
@@ -72,14 +93,7 @@ class SwitchTableViewCell: UITableViewCell {
             height: contentView.frame.size.height)
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        iconImageView.image = nil
-        label.text = nil
-        iconContainer.backgroundColor = nil
-        _switch.isOn = false
-    }
-    
+    // MARK: - Configure
     public func configure(with model: SettingsSwitchOption) {
         label.text = model.title
         iconImageView.image = model.icon

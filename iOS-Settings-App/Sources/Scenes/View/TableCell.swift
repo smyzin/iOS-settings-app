@@ -1,13 +1,15 @@
 //
-//  SettingTableViewCell.swift
+//  TableCell.swift
 //  iOS-Settings-App
 //
 
 import UIKit
 
-class SettingTableViewCell: UITableViewCell {
-    static let identifier = "SettingTableViewCell"
+class TableCell: UITableViewCell {
+    // MARK: - ID
+    static let identifier = "TableCell"
     
+    // MARK: - Variables
     private let iconContainer: UIView = {
         let view = UIView()
         view.clipsToBounds = true
@@ -37,15 +39,10 @@ class SettingTableViewCell: UITableViewCell {
         return imageView
     }()
     
+    // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(label)
-        contentView.addSubview(subLabel)
-        contentView.addSubview(iconContainer)
-        iconContainer.addSubview(iconImageView)
-        
-        contentView.clipsToBounds = true
-        accessoryType = .disclosureIndicator
+        setupHierarchy()
     }
     
     required init?(coder: NSCoder) {
@@ -54,6 +51,30 @@ class SettingTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        setupLayouts()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        iconImageView.image = nil
+        label.text = nil
+        subLabel.text = nil
+        iconContainer.backgroundColor = nil
+    }
+    
+    // MARK: - Setup Hierarchy (Table)
+    func setupHierarchy() {
+        contentView.clipsToBounds = true
+        accessoryType = .disclosureIndicator
+        
+        contentView.addSubview(label)
+        contentView.addSubview(subLabel)
+        contentView.addSubview(iconContainer)
+        iconContainer.addSubview(iconImageView)
+    }
+    
+    // MARK: - Setup Layouts (Table)
+    func setupLayouts() {
         let size: CGFloat = contentView.frame.size.height - Metrics.sizePadding
         iconContainer.frame = CGRect(x: Metrics.iconContainerX, y: Metrics.iconContainerY, width: size, height: size)
         
@@ -80,14 +101,7 @@ class SettingTableViewCell: UITableViewCell {
         )
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        iconImageView.image = nil
-        label.text = nil
-        subLabel.text = nil
-        iconContainer.backgroundColor = nil
-    }
-    
+    // MARK: - Configure
     public func configure(with model: SettingsOption) {
         label.text = model.title
         subLabel.text = model.subText
