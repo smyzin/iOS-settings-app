@@ -16,6 +16,7 @@
 		8532D98A274187B000819ECD /* iOSSettingsAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8532D989274187B000819ECD /* iOSSettingsAppModel.swift */; };
 		857C5F882725802900AABF2B /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C5F872725802900AABF2B /* TableCell.swift */; };
 		857C5F8A2725950C00AABF2B /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C5F892725950C00AABF2B /* SwitchCell.swift */; };
+		85AD34742754F04000FE748D /* iOSSettingsAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AD34732754F04000FE748D /* iOSSettingsAppView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8532D989274187B000819ECD /* iOSSettingsAppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSettingsAppModel.swift; sourceTree = "<group>"; };
 		857C5F872725802900AABF2B /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		857C5F892725950C00AABF2B /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
+		85AD34732754F04000FE748D /* iOSSettingsAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSettingsAppView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				857C5F872725802900AABF2B /* TableCell.swift */,
 				857C5F892725950C00AABF2B /* SwitchCell.swift */,
 				8532D98027401B3000819ECD /* BadgeCell.swift */,
+				85AD34732754F04000FE748D /* iOSSettingsAppView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				8532D98127401B3000819ECD /* BadgeCell.swift in Sources */,
 				8528305E27130F7F0009E4E1 /* AppDelegate.swift in Sources */,
 				857C5F8A2725950C00AABF2B /* SwitchCell.swift in Sources */,
+				85AD34742754F04000FE748D /* iOSSettingsAppView.swift in Sources */,
 				857C5F882725802900AABF2B /* TableCell.swift in Sources */,
 				8528306027130F7F0009E4E1 /* SceneDelegate.swift in Sources */,
 			);
